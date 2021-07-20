@@ -36,6 +36,8 @@ function setup() {
     //--Ground
     ground=Matter.Bodies.rectangle(width/2,height-50,width,100,{
         isStatic:true,
+        restitution:0,
+        density:10000,
     });
     World.add(world,ground);
     //--
@@ -70,4 +72,25 @@ function draw() {
     //--
 
     drawSprites();
+
+    //--Player movement
+    
+    //Arrow moves
+    if(keyDown("right")&&player.position.x<width-20) {
+        Matter.Body.applyForce(player,{x:0,y:0},{x:0.0009,y:0});
+    }
+    if(keyDown("left")) {
+        Matter.Body.applyForce(player,{x:0,y:0},{x:-0.0009,y:0});
+    }
+    if(keyDown("up")) {
+        Matter.Body.applyForce(player,{x:0,y:0},{x:0,y:-0.02});
+    }
+
+    //Keeping the player in the world
+    if(player.position.x>=width) {
+        player.position.x=width;
+    }
+    if(player.position.x<=0) {
+        player.position.x=0;
+    }
 }
