@@ -14,8 +14,11 @@ var bg,bg_;
 
 var ground;
 
+var player,player_,player$;
+
 function preload() {
     bg_=loadImage("./assets/world/bg.png");
+    player_=loadImage("./assets/player/right.png");
 }
 function setup() {
     //--Canvas
@@ -36,13 +39,19 @@ function setup() {
     });
     World.add(world,ground);
     //--
+
+    //--Player
+    player=Matter.Bodies.rectangle(100,height/2,64,64);
+    World.add(world,player);
+
+    player$=createSprite(100,200,64,64);
+    player$.addAnimation("player",player_);
+    //--
 }
 function draw() {
     background(220);
 
     Engine.update(engine);
-
-    drawSprites();
 
     imageMode(CENTER)
 
@@ -54,4 +63,11 @@ function draw() {
     rectMode(CENTER)
     rect(ground.position.x,ground.position.y,width,100);
     //--
+
+    //--Player display
+    player$.position.x=player.position.x;
+    player$.position.y=player.position.y;
+    //--
+
+    drawSprites();
 }
