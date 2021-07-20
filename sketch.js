@@ -6,8 +6,10 @@ const Constraint = Matter.Constraint;
 
 var world,engine;
 
-function preload() {
+var bg,bg_;
 
+function preload() {
+    bg_=loadImage("./assets/world/bg.png");
 }
 function setup() {
     createCanvas(windowWidth-20,windowHeight-20);
