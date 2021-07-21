@@ -93,4 +93,7 @@ function draw() {
     if(player.position.x<=0) {
         player.position.x=0;
     }
+    if(player.position.y<=0) {
+        player.position.y=0;
+    }
 }
