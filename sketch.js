@@ -85,6 +85,7 @@ function draw() {
     if(keyDown("up")) {
         Matter.Body.applyForce(player,{x:0,y:0},{x:0,y:-0.02});
     }
+    //--
 
     //Keeping the player in the world
     if(player.position.x>=width) {
@@ -96,4 +97,5 @@ function draw() {
     if(player.position.y<=0) {
         player.position.y=0;
     }
+    //--
 }
