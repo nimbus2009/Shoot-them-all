@@ -36,14 +36,18 @@ function setup() {
     //--Ground
     ground=Matter.Bodies.rectangle(width/2,height-50,width,100,{
         isStatic:true,
-        restitution:0,
+        restitution:1.2,
         density:10000,
     });
     World.add(world,ground);
     //--
 
     //--Player
-    player=Matter.Bodies.rectangle(100,height/2,64,64);
+    player=Matter.Bodies.rectangle(100,height/2,64,64,{
+        restitution:0,
+        density:100,
+        mass:10
+    });
     World.add(world,player);
 
     player$=createSprite(100,200,64,64);
@@ -77,13 +81,13 @@ function draw() {
     
     //Arrow moves
     if(keyDown("right")&&player.position.x<width-20) {
-        Matter.Body.applyForce(player,{x:0,y:0},{x:0.0009,y:0});
+        Matter.Body.applyForce(player,{x:0,y:0},{x:0.05,y:0});
     }
     if(keyDown("left")) {
-        Matter.Body.applyForce(player,{x:0,y:0},{x:-0.0009,y:0});
+        Matter.Body.applyForce(player,{x:0,y:0},{x:-0.05,y:0});
     }
-    if(keyDown("up")) {
-        Matter.Body.applyForce(player,{x:0,y:0},{x:0,y:-0.02});
+    if(keyDown("up")&&player.position.y>=height/2) {
+        Matter.Body.applyForce(player,{x:0,y:0},{x:0,y:-0.09});
     }
     //--
 
@@ -97,5 +101,8 @@ function draw() {
     if(player.position.y<=0) {
         player.position.y=0;
     }
+    /*if(player.position.y>=ground.position.y-100) {
+        player.position.y=ground.position.y-90;
+    }*/
     //--
 }
