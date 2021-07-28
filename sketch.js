@@ -16,7 +16,7 @@ var ground;
 
 var player,player_,player$;
 
-var Block;
+var Blocks=[];
 
 function preload() {
     bg_=loadImage("./assets/world/bg.png");
@@ -57,7 +57,10 @@ function setup() {
     //--
 
     //--Blocks... Also see "classes/block.js"
-    Block=new block(200,200,20,200);
+    for(var i=0;i<3;i++) {
+        var somethingmaybe=new block(random(100,width-(width*(3/4))),random(height*1/4,height*3/4),random(20,100),20);
+        Blocks.push(somethingmaybe);
+    }
 }
 function draw() {
     background(220);
@@ -112,6 +115,8 @@ function draw() {
     //--
 
     //--Block displays
-    Block.display();
+    for(var j=0;j<Blocks.length;j++) {
+        Blocks[j].display();
+    }
     //--
 }

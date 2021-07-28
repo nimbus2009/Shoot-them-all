@@ -20,7 +20,7 @@ class block {
             fill("red");
         }
 
-        rectMode(CENTER);
-        rect(this.x,this.y,this.width,this.height);
+        //rectMode(CENTER);
+        rect(this.x,this.y,this.width-25,this.height);
     }
 }
