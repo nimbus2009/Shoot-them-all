@@ -16,6 +16,8 @@ var ground;
 
 var player,player_,player$;
 
+var Block;
+
 function preload() {
     bg_=loadImage("./assets/world/bg.png");
     player_=loadImage("./assets/player/right.png");
@@ -53,6 +55,9 @@ function setup() {
     player$=createSprite(100,200,64,64);
     player$.addAnimation("player",player_);
     //--
+
+    //--Blocks... Also see "classes/block.js"
+    Block=new block(200,200,20,200);
 }
 function draw() {
     background(220);
@@ -104,5 +109,9 @@ function draw() {
     /*if(player.position.y>=ground.position.y-100) {
         player.position.y=ground.position.y-90;
     }*/
+    //--
+
+    //--Block displays
+    Block.display();
     //--
 }
