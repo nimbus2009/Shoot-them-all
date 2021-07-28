@@ -21,6 +21,6 @@ class block {
         }
 
         //rectMode(CENTER);
-        rect(this.x,this.y,this.width-25,this.height);
+        rect(this.x,this.y,this.width+25,this.height);
     }
 }

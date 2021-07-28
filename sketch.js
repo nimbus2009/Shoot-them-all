@@ -58,7 +58,7 @@ function setup() {
 
     //--Blocks... Also see "classes/block.js"
     for(var i=0;i<3;i++) {
-        var somethingmaybe=new block(random(100,width-(width*(3/4))),random(height*1/4,height*3/4),random(20,100),20);
+        var somethingmaybe=new block(random(100,width-(width*(1/4))),random(height*1/4,height*3/4),random(20,100),20);
         Blocks.push(somethingmaybe);
     }
 }
