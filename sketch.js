@@ -14,7 +14,7 @@ var bg,bg_;
 
 var ground;
 
-var player,player_,player$;
+var player,player_,player$,_player;
 
 var Blocks=[];
 
@@ -22,10 +22,13 @@ var gun,gun_;
 
 let angle=0;
 
+let pDirection='r';
+
 function preload() {
     bg_=loadImage("./assets/world/bg.png");
     player_=loadImage("./assets/player/right.png");
     gun_=loadImage("./assets/items/blasterG.png");
+    _player=loadImage("./assets/player/left.png");
 }
 function setup() {
     //--Canvas
@@ -58,7 +61,6 @@ function setup() {
     World.add(world,player);
 
     player$=createSprite(100,200,64,64);
-    player$.addAnimation("player",player_);
     player$.scale=1.25;
     //--
 
@@ -103,9 +105,11 @@ function draw() {
     //Arrow moves➡⬅⬆⬇
     if(keyDown("right")&&player.position.x<width-20) {
         Matter.Body.applyForce(player,{x:0,y:0},{x:0.05,y:0});
+        pDirection='r';
     }
     if(keyDown("left")) {
         Matter.Body.applyForce(player,{x:0,y:0},{x:-0.05,y:0});
+        pDirection='l';
     }
     if(keyDown("up")&&player.position.y>=height/2) {
         Matter.Body.applyForce(player,{x:0,y:0},{x:0,y:-0.09});
@@ -141,4 +145,12 @@ function draw() {
     //--Gun angle settings
     gun.rotation=angle;
     //--
+
+    //--Player animation
+    if(pDirection=='r') {
+        player$.addAnimation("player",player_);
+    }
+    if(pDirection=='l') {
+        player$.addAnimation("player",_player);
+    }
 }
