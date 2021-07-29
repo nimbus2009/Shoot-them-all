@@ -94,7 +94,7 @@ function draw() {
     //--
 
     //--Player display
-    player$.position.x=player.position.x;
+    player$.position.x=player.position.x-5;
     player$.position.y=player.position.y;
     //--
 
