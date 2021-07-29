@@ -20,6 +20,8 @@ var Blocks=[];
 
 var gun,gun_;
 
+let angle=0;
+
 function preload() {
     bg_=loadImage("./assets/world/bg.png");
     player_=loadImage("./assets/player/right.png");
@@ -136,4 +138,7 @@ function draw() {
     gun.position.y=player$.position.y-5;
     //--
 
+    //--Gun angle settings
+    gun.rotation=angle;
+    //--
 }
