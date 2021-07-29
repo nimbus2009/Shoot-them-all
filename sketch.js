@@ -130,4 +130,10 @@ function draw() {
         Blocks[j].display();
     }
     //--
+
+    //--Gun position
+    gun.position.x=player$.position.x+50;
+    gun.position.y=player$.position.y-5;
+    //--
+
 }
