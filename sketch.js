@@ -41,7 +41,7 @@ function setup() {
     //--
 
     //--Ground🌏
-    ground=Matter.Bodies.rectangle(width/2,height-50,width,100,{
+    ground=Matter.Bodies.rectangle(width/2,height-50,width*2,100,{
         isStatic:true,
         restitution:1.2,
         density:10000,
@@ -86,7 +86,7 @@ function draw() {
     image(bg_,width/2,height/2,width,height);
 
     //--Ground display
-    fill("#F5D11F")
+    fill("#800000")
     rectMode(CENTER)
     rect(ground.position.x,ground.position.y,width,100);
     //--

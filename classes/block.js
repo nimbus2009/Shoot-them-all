@@ -17,7 +17,7 @@ class block {
             fill(this.color);
         }
         else {
-            fill("red");
+            fill("blueviolet");
         }
 
         //rectMode(CENTER);
