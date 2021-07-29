@@ -160,10 +160,10 @@ function draw() {
     //--
 
     //--Gun rotation on letter presses
-    if(keyDown('up')) {
+    if(keyDown('up')&&angle>-90) {
         angle-=0.5
     }
-    if(keyDown('down')) {
+    if(keyDown('down')&&angle<90) {
         angle+=0.5
     }
 }
