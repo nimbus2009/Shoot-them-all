@@ -157,4 +157,13 @@ function draw() {
         gun.addAnimation("gun",_gun);
         gun.position.x=player$.position.x-70;
     }
+    //--
+
+    //--Gun rotation on letter presses
+    if(keyDown('up')) {
+        angle-=0.5
+    }
+    if(keyDown('down')) {
+        angle+=0.5
+    }
 }
