@@ -18,9 +18,12 @@ var player,player_,player$;
 
 var Blocks=[];
 
+var gun,gun_;
+
 function preload() {
     bg_=loadImage("./assets/world/bg.png");
     player_=loadImage("./assets/player/right.png");
+    gun_=loadImage("./assets/items/blasterG.png");
 }
 function setup() {
     //--Canvas
@@ -35,7 +38,7 @@ function setup() {
 
     //--
 
-    //--Ground
+    //--Ground🌏
     ground=Matter.Bodies.rectangle(width/2,height-50,width,100,{
         isStatic:true,
         restitution:1.2,
@@ -45,7 +48,7 @@ function setup() {
     //--
 
     //--Player
-    player=Matter.Bodies.rectangle(100,height/2,64,64,{
+    player=Matter.Bodies.rectangle(100,height/2,80,80,{
         restitution:0,
         density:100,
         mass:10
@@ -54,13 +57,21 @@ function setup() {
 
     player$=createSprite(100,200,64,64);
     player$.addAnimation("player",player_);
+    player$.scale=1.25;
     //--
 
-    //--Blocks... Also see "classes/block.js"
+    //--Blocks🟥... Also see "classes/block.js"
     for(var i=0;i<4;i++) {
         var somethingmaybe=new block(random(100,width-(width*(1/4))),random(height*1/4,height*3/4),random(20,70),20);
         Blocks.push(somethingmaybe);
     }
+    //--
+
+    //--Gun🔫 Bam!Bam!💥💥
+    gun=createSprite(200,200,20,20);
+    gun.addAnimation("gun",gun_);
+    gun.scale=0.5;
+    //--
 }
 function draw() {
     background(220);
@@ -87,7 +98,7 @@ function draw() {
 
     //--Player movement
     
-    //Arrow moves
+    //Arrow moves➡⬅⬆⬇
     if(keyDown("right")&&player.position.x<width-20) {
         Matter.Body.applyForce(player,{x:0,y:0},{x:0.05,y:0});
     }
