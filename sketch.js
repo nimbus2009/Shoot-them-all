@@ -134,7 +134,7 @@ function draw() {
     //--
 
     //--Gun position
-    gun.position.x=player$.position.x+50;
+    gun.position.x=player$.position.x+70;
     gun.position.y=player$.position.y-5;
     //--
 
