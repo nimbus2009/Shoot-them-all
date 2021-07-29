@@ -18,7 +18,7 @@ var player,player_,player$,_player;
 
 var Blocks=[];
 
-var gun,gun_;
+var gun,gun_,_gun;
 
 let angle=0;
 
@@ -29,6 +29,7 @@ function preload() {
     player_=loadImage("./assets/player/right.png");
     gun_=loadImage("./assets/items/blasterG.png");
     _player=loadImage("./assets/player/left.png");
+    _gun=loadImage("./assets/items/blasterGG.png");
 }
 function setup() {
     //--Canvas
@@ -73,7 +74,6 @@ function setup() {
 
     //--Gun🔫 Bam!Bam!💥💥
     gun=createSprite(200,200,20,20);
-    gun.addAnimation("gun",gun_);
     gun.scale=0.5;
     //--
 }
@@ -137,8 +137,8 @@ function draw() {
     }
     //--
 
-    //--Gun position
-    gun.position.x=player$.position.x+70;
+    //--Gun position(on y-axis)
+    //For x-axis see "Player animation"
     gun.position.y=player$.position.y-5;
     //--
 
@@ -149,8 +149,12 @@ function draw() {
     //--Player animation
     if(pDirection=='r') {
         player$.addAnimation("player",player_);
+        gun.addAnimation("gun",gun_);
+        gun.position.x=player$.position.x+70;
     }
     if(pDirection=='l') {
         player$.addAnimation("player",_player);
+        gun.addAnimation("gun",_gun);
+        gun.position.x=player$.position.x-70;
     }
 }
