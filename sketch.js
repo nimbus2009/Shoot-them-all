@@ -33,6 +33,7 @@ function preload() {
     _player=loadImage("./assets/player/left.png");
     _gun=loadImage("./assets/items/blasterGG.png");
     gear_=loadAnimation("./assets/enemies/spinner.png","./assets/enemies/spinner_spin.png");
+    ghost_=loadImage("./assets/enemies/g.png");
 }
 function setup() {
     //--Canvas
@@ -89,9 +90,6 @@ function setup() {
     gear$=createSprite(gear.position.x,gear.position.y,20,20);
     gear$.addAnimation("gear",gear_);
     //--
-
-    //--Ghosts spawning
-    spawnGhost(300,300);
 }
 function draw() {
     background(220);
@@ -211,6 +209,8 @@ function draw() {
     }
     //--
 
-    //--Ghost display
-    displayGhosts();
+    //--Ghost spawning
+    if(frameCount%Math.round(random(200,500))==0) {
+        spawnGhost(width,Math.round(random(100,height-300)));
+    }
 }
