@@ -164,20 +164,29 @@ function draw() {
         player$.addAnimation("player",player_);
         gun.addAnimation("gun",gun_);
         gun.position.x=player$.position.x+70;
+
+            //--Gun rotation on letter presses
+        if(keyDown('up')&&angle>-90) {
+            angle-=0.5
+        }
+        if(keyDown('down')&&angle<90) {
+            angle+=0.5
+        }
+        //--
     }
     if(pDirection=='l') {
         player$.addAnimation("player",_player);
         gun.addAnimation("gun",_gun);
         gun.position.x=player$.position.x-70;
-    }
-    //--
 
-    //--Gun rotation on letter presses
-    if(keyDown('up')&&angle>-90) {
-        angle-=0.5
-    }
-    if(keyDown('down')&&angle<90) {
-        angle+=0.5
+            //--Gun rotation on letter presses
+        if(keyDown('down')&&angle>-90) {
+            angle-=0.5
+        }
+        if(keyDown('up')&&angle<90) {
+            angle+=0.5
+        }
+        //--
     }
     //--
 
