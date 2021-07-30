@@ -5,7 +5,7 @@ class Ghost{
         this.x=x;
         this.y=y;
 
-        this.img=loadImage("assets/enemies/ghost.png");
+        this.img=loadImage("assets/enemies/g.png");
 
         this.ghostbody=Bodies.rectangle(this.x,this.y,53,73,{
             isStatic:true
