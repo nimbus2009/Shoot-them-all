@@ -89,6 +89,9 @@ function setup() {
     gear$=createSprite(gear.position.x,gear.position.y,20,20);
     gear$.addAnimation("gear",gear_);
     //--
+
+    //--Ghosts spawning
+    spawnGhost(300,300);
 }
 function draw() {
     background(220);
@@ -207,4 +210,7 @@ function draw() {
         gDirection='d';
     }
     //--
+
+    //--Ghost display
+    displayGhosts();
 }
