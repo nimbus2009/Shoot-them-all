@@ -6,5 +6,5 @@ function spawnGhost(x,y) {
     ghost.addAnimation("ghost",ghost_);
     ghost.velocityX=-0.5;
 
-    ghost.lifetime=1000;
+    ghost.lifetime=9000;
 }

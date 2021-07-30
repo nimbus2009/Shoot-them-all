@@ -6,5 +6,5 @@ function spawnBat(x,y) {
     bat.addAnimation("bat",bat_);
     bat.velocityX=-0.5;
 
-    bat.lifetime=1000;
+    bat.lifetime=9000;
 }
