@@ -33,7 +33,7 @@ function preload() {
     _player=loadImage("./assets/player/left.png");
     _gun=loadImage("./assets/items/blasterGG.png");
     gear_=loadAnimation("./assets/enemies/spinner.png","./assets/enemies/spinner_spin.png");
-    ghost_=loadImage("./assets/enemies/g.png");
+    ghost_=loadImage("./assets/enemies/ghost.png");
 }
 function setup() {
     //--Canvas
