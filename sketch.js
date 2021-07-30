@@ -15,6 +15,7 @@ var bg,bg_;
 var ground;
 
 var player,player_,player$,_player;
+let pDirection='r';
 
 var Blocks=[];
 
@@ -22,7 +23,8 @@ var gun,gun_,_gun;
 
 let angle=0;
 
-let pDirection='r';
+var gear,gear$,gear_;
+let gDirection='d';
 
 function preload() {
     bg_=loadImage("./assets/world/bg.png");
@@ -30,6 +32,7 @@ function preload() {
     gun_=loadImage("./assets/items/blasterG.png");
     _player=loadImage("./assets/player/left.png");
     _gun=loadImage("./assets/items/blasterGG.png");
+    gear_=loadAnimation("./assets/enemies/spinner.png","./assets/enemies/spinner_spin.png");
 }
 function setup() {
     //--Canvas
@@ -67,7 +70,7 @@ function setup() {
 
     //--Blocks🟥... Also see "classes/block.js"
     for(var i=0;i<4;i++) {
-        var somethingmaybe=new block(random(100,width-(width*(1/4))),random(height*1/4,height*3/4),random(20,70),20);
+        var somethingmaybe=new block(random(100,width-(width*(1/4))),random(height*1/4,height*3/4),random(20,30),20);
         Blocks.push(somethingmaybe);
     }
     //--
@@ -75,6 +78,16 @@ function setup() {
     //--Gun🔫 Bam!Bam!💥💥
     gun=createSprite(200,200,20,20);
     gun.scale=0.5;
+    //--
+
+    //--Gear
+    gear=Bodies.circle(width*(3/4),height-200,50,{
+        isStatic:true
+    });
+    World.add(world,gear);
+
+    gear$=createSprite(gear.position.x,gear.position.y,20,20);
+    gear$.addAnimation("gear",gear_);
     //--
 }
 function draw() {
@@ -166,4 +179,23 @@ function draw() {
     if(keyDown('down')&&angle<90) {
         angle+=0.5
     }
+    //--
+
+    //--Gear movement
+    gear$.position.y=gear.position.y;
+
+    if(gDirection=='t') {
+        gear.position.y-=1.5;
+    }
+    if(gDirection=='d') {
+        gear.position.y+=2;
+    }
+
+    if(gear.position.y>=height-150) {
+        gDirection='t';
+    }
+    if(gear.position.y<=50) {
+        gDirection='d';
+    }
+    //--
 }
