@@ -26,6 +26,8 @@ let angle=0;
 var gear,gear$,gear_;
 let gDirection='d';
 
+var bat_;
+
 function preload() {
     bg_=loadImage("./assets/world/bg.png");
     player_=loadImage("./assets/player/right.png");
@@ -34,6 +36,7 @@ function preload() {
     _gun=loadImage("./assets/items/blasterGG.png");
     gear_=loadAnimation("./assets/enemies/spinner.png","./assets/enemies/spinner_spin.png");
     ghost_=loadImage("./assets/enemies/ghost.png");
+    bat_=loadAnimation("./assets/enemies/bat_fly.png","./assets/enemies/bat.png");
 }
 function setup() {
     //--Canvas
