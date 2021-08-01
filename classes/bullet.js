@@ -1,5 +1,8 @@
 class Bullet{
-    constructor() {
-        
+    constructor(x,y) {
+        this.x=x;
+        this.y=y;
+
+        this.body=Bodies.rectangle()
     }
 }
