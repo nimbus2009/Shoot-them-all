@@ -19,7 +19,7 @@ let pDirection='r';
 
 var Blocks=[];
 
-var gun,gun_,_gun;
+var gun,gun_,_gun,gun$;
 
 let angle=0;
 
@@ -27,6 +27,8 @@ var gear,gear$,gear_;
 let gDirection='d';
 
 var bat_;
+
+var the;
 
 function preload() {
     bg_=loadImage("./assets/world/bg.png");
@@ -82,6 +84,11 @@ function setup() {
     //--Gun🔫 Bam!Bam!💥💥
     gun=createSprite(200,200,20,20);
     gun.scale=0.5;
+
+    gun$=Bodies.rectangle(200,200,50,20,{
+        isStatic:true
+    });
+    World.add(world,gun$);
     //--
 
     //--Gear
@@ -161,6 +168,8 @@ function draw() {
 
     //--Gun angle settings
     gun.rotation=angle;
+    gun.angle=angle;
+    gun$.angle=angle;
     //--
 
     //--Player animation
@@ -223,4 +232,23 @@ function draw() {
         spawnBat(width,Math.round(random(100,height-300)));
     }
     //--
+
+    fill("#676e6a");
+    push();
+    translate(gun$.position.x, gun$.position.y);
+    rotate(angle);
+    rect(0, 0, 50, 20);
+    pop();
+}
+
+function keyPressed() {
+    if(keyCode==32) {
+        the=new Bullet(200,200);
+    }
+}
+
+function keyReleased() {
+    if(keyCode==32) {
+        the.shoot(gun$.angle);
+    }
 }

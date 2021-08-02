@@ -17,9 +17,9 @@ class Bullet{
         this.sprite.position.y=pos.y;
     }
     shoot(angle) {
-        angle.mult(20);
-
-        Body.setStatic(this.body,false);
-        Body.applyForce(this.body, {x: angle.x, y: angle.y})
+        var velocity = p5.Vector.fromAngle(angle);
+        velocity.mult(20);
+        Matter.Body.setStatic(this.body, false);
+        Matter.Body.setVelocity(this.body, { x: velocity.x, y: velocity.y });
     }
 }
