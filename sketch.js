@@ -135,7 +135,7 @@ function draw() {
         Matter.Body.applyForce(player,{x:0,y:0},{x:-0.05,y:0});
         pDirection='l';
     }
-    if(keyDown("space")&&player.position.y>=height/2) {
+    if(keyDown("a")&&player.position.y>=height/2) {
         Matter.Body.applyForce(player,{x:0,y:0},{x:0,y:-0.09});
     }
     //--
