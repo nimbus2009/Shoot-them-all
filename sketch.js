@@ -30,6 +30,8 @@ var bat_;
 
 var the;
 
+var bullets=[];
+
 function preload() {
     bg_=loadImage("./assets/world/bg.png");
     player_=loadImage("./assets/player/right.png");
@@ -239,11 +241,16 @@ function draw() {
     rotate(angle);
     rect(0, 0, 50, 20);
     pop();
+
+    for(var c=0;c<bullets.length;c++) {
+        bullets[c].display();
+    }
 }
 
 function keyPressed() {
     if(keyCode==32) {
-        the=new Bullet(200,200);
+        the=new Bullet(300,200);
+        bullets.unshift(the);
     }
 }
 

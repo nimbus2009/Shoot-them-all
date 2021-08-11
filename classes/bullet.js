@@ -11,15 +11,15 @@ class Bullet{
         this.sprite=createSprite(this.x,this.y,20,20);
     }
     display() {
-        pos=this.body.position;
+        let pos=this.body.position;
 
         this.sprite.position.x=pos.x;
         this.sprite.position.y=pos.y;
     }
     shoot(angle) {
         var velocity = p5.Vector.fromAngle(angle);
-        velocity.mult(20);
+        velocity.mult(0.06);
         Matter.Body.setStatic(this.body, false);
-        Matter.Body.setVelocity(this.body, { x: velocity.x, y: velocity.y });
+        Matter.Body.applyForce(this.body, {x:0,y:0} ,{ x: velocity.x, y: velocity.y });
     }
 }
