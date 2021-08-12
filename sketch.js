@@ -31,6 +31,8 @@ var bat_;
 var the;
 
 var bullets=[];
+var ghosts=[];
+var bats=[];
 
 function preload() {
     bg_=loadImage("./assets/world/bg.png");
@@ -246,9 +248,6 @@ function draw() {
         bullets[c].display();
     }
 
-    if(colliding(player,gun,70)) {
-        console.log("Collided!")
-    }
 }
 
 function keyPressed() {
