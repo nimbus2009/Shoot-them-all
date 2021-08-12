@@ -245,6 +245,10 @@ function draw() {
     for(var c=0;c<bullets.length;c++) {
         bullets[c].display();
     }
+
+    if(colliding(player,gun,70)) {
+        console.log("Collided!")
+    }
 }
 
 function keyPressed() {
