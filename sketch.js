@@ -249,13 +249,17 @@ function draw() {
 
 function keyPressed() {
     if(keyCode==32) {
-        the=new Bullet(300,200);
-        bullets.unshift(the);
+        the=new Bullet(gun.position.x,gun.position.y);
+        bullets.push(the);
     }
 }
 
 function keyReleased() {
     if(keyCode==32) {
         the.shoot(gun$.angle);
+        if(bullets.length>1) {
+            World.remove(world,bullets[0].body);
+            bullets.shift();
+        }
     }
 }
