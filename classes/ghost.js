@@ -1,4 +1,4 @@
-var ghosts=[];
+//var ghosts=[];
 var ghost;
 
 function spawnGhost(x,y) {
@@ -7,4 +7,6 @@ function spawnGhost(x,y) {
     ghost.velocityX=-0.5;
 
     ghost.lifetime=9000;
+
+    ghosts.push(ghost);
 }

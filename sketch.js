@@ -246,6 +246,11 @@ function draw() {
 
     for(var c=0;c<bullets.length;c++) {
         bullets[c].display();
+        for(var a=0;a<ghosts.length;a++) {
+            if(colliding(bullets[c].body,ghosts[a],40)) {
+                ghosts[a].destroy();
+            }
+        }
     }
 
 }
