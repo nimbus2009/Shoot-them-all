@@ -1,4 +1,4 @@
-var bats=[];
+//var bats=[];
 var bat;
 
 function spawnBat(x,y) {
@@ -7,4 +7,6 @@ function spawnBat(x,y) {
     bat.velocityX=-2;
 
     bat.lifetime=9000;
+
+    bats.push(bat);
 }

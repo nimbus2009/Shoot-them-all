@@ -247,8 +247,15 @@ function draw() {
     for(var c=0;c<bullets.length;c++) {
         bullets[c].display();
         for(var a=0;a<ghosts.length;a++) {
-            if(colliding(bullets[c].body,ghosts[a],40)) {
+            if(colliding(bullets[c].body,ghosts[a],70)) {
                 ghosts[a].destroy();
+                ghosts.splice(a,1);
+            }
+        }
+        for(var a=0;a<bats.length;a++) {
+            if(colliding(bullets[c].body,bats[a],70)) {
+                bats[a].destroy();
+                bats.splice(a,1)
             }
         }
     }
