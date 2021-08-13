@@ -226,13 +226,13 @@ function draw() {
     //--
 
     //--Ghost spawning
-    if(frameCount%Math.round(random(200,500))==0) {
+    if(frameCount%Math.round(random(500,600))==0) {
         spawnGhost(width,Math.round(random(100,height-300)));
     }
     //--
 
     //--Bat spawning
-    if(frameCount%Math.round(random(500,800))==0) {
+    if(frameCount%Math.round(random(700,1000))==0) {
         spawnBat(width,Math.round(random(100,height-300)));
     }
     //--
