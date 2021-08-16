@@ -16,7 +16,8 @@ class Bullet{
         //this.sprite.position.x=pos.x;
         //this.sprite.position.y=pos.y;
 
-        rect(pos.x,pos.y,20,20);
+        fill("brown");
+        rect(pos.x,pos.y,10,10);
     }
     shoot(angle) {
         var velocity = p5.Vector.fromAngle(angle);

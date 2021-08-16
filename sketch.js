@@ -34,6 +34,9 @@ var bullets=[];
 var ghosts=[];
 var bats=[];
 
+var score=0;
+var lives=3;
+
 function preload() {
     bg_=loadImage("./assets/world/bg.png");
     player_=loadImage("./assets/player/right.png");
