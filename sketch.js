@@ -244,7 +244,7 @@ function draw() {
     push();
     translate(gun$.position.x, gun$.position.y);
     rotate(angle);
-    rect(0, 0, 50, 20);
+    //rect(0, 0, 50, 20);
     pop();
 
     for(var c=0;c<bullets.length;c++) {
@@ -253,12 +253,14 @@ function draw() {
             if(colliding(bullets[c].body,ghosts[a],70)) {
                 ghosts[a].destroy();
                 ghosts.splice(a,1);
+                score+=5;
             }
         }
         for(var a=0;a<bats.length;a++) {
             if(colliding(bullets[c].body,bats[a],70)) {
                 bats[a].destroy();
-                bats.splice(a,1)
+                bats.splice(a,1);
+                score+=7;
             }
         }
     }
