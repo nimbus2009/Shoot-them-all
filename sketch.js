@@ -21,8 +21,6 @@ var Blocks=[];
 
 var gun,gun_,_gun,gun$;
 
-let angle=0;
-
 var gear,gear$,gear_;
 let gDirection='d';
 
@@ -36,6 +34,12 @@ var bats=[];
 
 var score=0;
 var lives=3;
+
+var cangle=0;
+
+const angles=[0,6.5,13.5,19,26,39,45,51.5,57.5,70.5,76.5];
+
+let angle=angles[cangle];
 
 function preload() {
     bg_=loadImage("./assets/world/bg.png");
@@ -59,6 +63,8 @@ function setup() {
     Engine.run(engine);
 
     //--
+
+    angle=angles[cangle];
 
     //--Ground🌏
     ground=Matter.Bodies.rectangle(width/2,height-50,width*2,100,{
@@ -113,7 +119,9 @@ function draw() {
 
     Engine.update(engine);
 
-    imageMode(CENTER)
+    imageMode(CENTER);
+
+    angle=-angles[cangle];
 
     //--Background
     image(bg_,width/2,height/2,width,height);
@@ -186,11 +194,13 @@ function draw() {
         gun.position.x=player$.position.x+70;
 
             //--Gun rotation on letter presses
-        if(keyDown('up')&&angle>-90) {
-            angle-=0.5
+        if(keyWentDown('up')&&cangle<angles.length-1) {
+            //angle-=0.5
+            cangle++;
         }
-        if(keyDown('down')&&angle<90) {
-            angle+=0.5
+        if(keyDown('down')&&cangle>-1) {
+            //angle+=0.5
+            cangle--;
         }
         //--
     }
