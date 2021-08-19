@@ -240,7 +240,7 @@ function draw() {
 
     //--Ghost spawning
     if(frameCount%Math.round(random(500,600))==0) {
-        spawnGhost(width,Math.round(random(100,height-300)));
+        spawnGhost(width,Math.round(random(100,height-100)));
     }
     //--
 
