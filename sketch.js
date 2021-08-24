@@ -56,6 +56,14 @@ function preload() {
     ghost_=loadImage("./assets/enemies/ghost.png");
     bat_=loadAnimation("./assets/enemies/bat_fly.png","./assets/enemies/bat.png");
     
+    up_=loadImage("./assets/ui/up.png");
+    down_=loadImage("./assets/ui/down.png");
+    shoot_=loadImage("./assets/ui/fire.png");
+    left_=loadImage("./assets/ui/left.png");
+    right_=loadImage("./assets/ui/right.png");
+    pause_=loadImage("./assets/ui/pause.png");
+    play_=loadImage("./assets/ui/play.png");
+    set_=loadImage("./assets/ui/mech.png");
 }
 function setup() {
     //--Canvas
