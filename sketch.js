@@ -304,8 +304,10 @@ function draw() {
         //alert("Player clicked, IDK why");
     }
 
-    if(touches>0) {
+    if(touches.length>0) {
         console.log(touches[0]);
+        alert(touches[0]);
+        touches=[];
     }
 
 }
