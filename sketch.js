@@ -43,8 +43,8 @@ let angle=angles[cangle];
 
 var isLoaded=!true;
 
-var up,down,shoot,left,right,pause,play;
-var up_,down_,shoot_,left_,right_,pause_,play_;
+var up,down,shoot,left,right,pause,play,set;
+var up_,down_,shoot_,left_,right_,pause_,play_,set_;
 
 function preload() {
     bg_=loadImage("./assets/world/bg.png");
