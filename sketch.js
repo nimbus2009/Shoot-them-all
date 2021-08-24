@@ -41,6 +41,8 @@ const angles=[0,6.5,13.5,19,26,39,45,51.5,57.5,70.5,76.5];
 
 let angle=angles[cangle];
 
+var isLoaded=!true;
+
 function preload() {
     bg_=loadImage("./assets/world/bg.png");
     player_=loadImage("./assets/player/right.png");
@@ -279,21 +281,28 @@ function draw() {
         }
     }
 
+    if(!isLoaded) {
+        setTimeout(()=>{
+            isLoaded=true;
+        },2000);
+    }
+
 }
 
 function keyPressed() {
-    if(keyCode==32) {
+    if(keyCode==32&&isLoaded) {
         the=new Bullet(gun.position.x,gun.position.y);
         bullets.push(the);
     }
 }
 
 function keyReleased() {
-    if(keyCode==32) {
+    if(keyCode==32&&isLoaded) {
         the.shoot(gun$.angle);
         if(bullets.length>1) {
             World.remove(world,bullets[0].body);
             bullets.shift();
         }
+        isLoaded=false;
     }
 }
