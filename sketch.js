@@ -43,6 +43,9 @@ let angle=angles[cangle];
 
 var isLoaded=!true;
 
+var up,down,shoot,left,right,pause,play;
+var up_,down_,shoot_,left_,right_,pause_,play_;
+
 function preload() {
     bg_=loadImage("./assets/world/bg.png");
     player_=loadImage("./assets/player/right.png");
@@ -52,6 +55,7 @@ function preload() {
     gear_=loadAnimation("./assets/enemies/spinner.png","./assets/enemies/spinner_spin.png");
     ghost_=loadImage("./assets/enemies/ghost.png");
     bat_=loadAnimation("./assets/enemies/bat_fly.png","./assets/enemies/bat.png");
+    
 }
 function setup() {
     //--Canvas
