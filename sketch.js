@@ -132,6 +132,10 @@ function draw() {
     rect(ground.position.x,ground.position.y,width,100);
     //--
 
+    fill("black");
+    textSize(20);
+    text(`Player score- ${score}`,50,50);
+
     //--Player display
     player$.position.x=player.position.x-5;
     player$.position.y=player.position.y;
