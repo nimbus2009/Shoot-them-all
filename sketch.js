@@ -299,22 +299,6 @@ function draw() {
         },2000);
     }
 
-    if(touched(player$,true,true)) {
-        console.log("Player clicked, IDK why");
-        //alert("Player clicked, IDK why");
-        alert("Player touched, IDK why");
-	    alert(touches[0].y);
-        touches=[];
-    }
-
-    /*if(touches.length>0) {
-        if(touches[0].x>player$.position.x-50&&touches[0].x<player$.position.x+50) {
-            alert("Player touched, IDK why");
-	        alert(touches[0].y);
-            touches=[];
-        }
-    }*/
-
 }
 
 function keyPressed() {
