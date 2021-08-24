@@ -299,6 +299,10 @@ function draw() {
         },2000);
     }
 
+    if(touched(player$,true,true)) {
+        console.log("Player clicked, IDK why");
+    }
+
 }
 
 function keyPressed() {

@@ -1,13 +1,12 @@
 //*Function touched()
 /**
+ * Returns whether a sprite is being touched/clicked
+ * 
  * @function touched() 
- * 
  * @requires p5.js||p5.min.js,p5.play.js||p5.play.min.js
- * 
- * @param sprite variable
- * @param mouse boolean
- * @param touch boolean
- * 
+ * @param sprite variable (sprite variable)
+ * @param mouse boolean (whether or not you want mouse click derection)
+ * @param touch boolean (whether or not you want touch derection)
  * @returns true/false/undefined(error)
  * 
  * @author Anuj Doddakaragi
