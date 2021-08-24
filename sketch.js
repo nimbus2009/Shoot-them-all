@@ -301,6 +301,7 @@ function draw() {
 
     if(touched(player$,true,true)) {
         console.log("Player clicked, IDK why");
+        alert("Player clicked, IDK why");
     }
 
     if(touches>0) {
