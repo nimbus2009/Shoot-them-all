@@ -303,6 +303,10 @@ function draw() {
         console.log("Player clicked, IDK why");
     }
 
+    if(touches>0) {
+        console.log(touches[0]);
+    }
+
 }
 
 function keyPressed() {
