@@ -29,7 +29,7 @@ function touched(sprite,mouse=false,touch=true) {
     if(touch&&sprite!=undefined) {
         if(touches.length>0) {
             if(sprite.position.x-50<touches[0].x&&touches[0].x<sprite.position.x+50) {
-                if(sprite.position.y-50<touches[0].y<sprite.position.y+50) {
+                if(sprite.position.y-50<touches[0].y&&touches[0].y<sprite.position.y+50) {
                     return true;
                 }
                 else {
