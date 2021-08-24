@@ -301,7 +301,8 @@ function draw() {
 
     if(touches.length>0) {
         if(touches[0].x<player$.position.x+50&&touches[0].x>player$.position.x-50) {
-            alert("IDK why, but the player was touched")
+            alert("IDK why, but the player was touched");
+            touches=[];
         }
     }
 
