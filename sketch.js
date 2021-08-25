@@ -46,6 +46,8 @@ var isLoaded=!true;
 var up,down,fire,left,right,pause,play,set;
 var up_,down_,fire_,left_,right_,pause_,play_,set_;
 
+var bgs;
+
 function preload() {
     bg_=loadImage("./assets/world/bg.png");
     player_=loadImage("./assets/player/right.png");
@@ -64,6 +66,8 @@ function preload() {
     pause_=loadImage("./assets/ui/pause.png");
     play_=loadImage("./assets/ui/play.png");
     set_=loadImage("./assets/ui/mech.png");
+
+    bgs=loadSound("./assets/sound1.mp3");
 }
 function setup() {
     //--Canvas
@@ -127,6 +131,8 @@ function setup() {
     gear$=createSprite(gear.position.x,gear.position.y,20,20);
     gear$.addAnimation("gear",gear_);
     //--
+
+    bgs.play();
 }
 function draw() {
     background(220);
