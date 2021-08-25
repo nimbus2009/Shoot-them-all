@@ -357,6 +357,21 @@ function draw() {
                 touches=[];
             }
         }
+        if(touches[0].x<left.position.x+50&&touches[0].x>left.position.x-50) {
+            if(touches[0].y<left.position.y+50&&touches[0].y>left.position.y-50) {
+                Matter.Body.applyForce(player,{x:0,y:0},{x:-0.05,y:0});
+                pDirection='l';
+                touches=[];
+            }
+        }
+        if(touches[0].x<right.position.x+50&&touches[0].x>right.position.x-50) {
+            if(touches[0].y<right.position.y+50&&touches[0].y>right.position.y-50) {
+                Matter.Body.applyForce(player,{x:0,y:0},{x:0.05,y:0});
+                pDirection='r';
+                touches=[];
+            }
+        }
+        
     }
 
 }
