@@ -128,12 +128,6 @@ function setup() {
     gear$.addAnimation("gear",gear_);
     //--
 
-    pause=createSprite(75,100,20,20);
-    pause.addImage("pause",pause_);
-
-    play=createSprite(150,100,20,20);
-    play.addImage("play",play_);
-
     left=createSprite(82-20,height-50,20,20);
     left.addImage("left",left_);
     left.scale=0.5;
