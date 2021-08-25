@@ -337,10 +337,14 @@ function draw() {
         }
         if(touches[0].x<up.position.x+50&&touches[0].x>up.position.x-50) {
             if(touches[0].y<up.position.y+50&&touches[0].y>up.position.y-50) {
-                if(cangle<angles.length){
-                    cangle++;
+                try {
+                    if(cangle<angles.length){
+                        cangle++;
+                    }
+                    touches=[];
+                } catch (error) {
+                    alert(error);
                 }
-                touches=[];
             }
         }
         if(touches[0].x<down.position.x+50&&touches[0].x>down.position.x-50) {
