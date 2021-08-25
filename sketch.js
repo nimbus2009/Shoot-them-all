@@ -328,16 +328,28 @@ function draw() {
     if(touches.length>0) {
         if(touches[0].x<fire.position.x+50&&touches[0].x>fire.position.x-50) {
             if(touches[0].y<fire.position.y+50&&touches[0].y>fire.position.y-50) {
-                the.shoot(gun$.angle);
                 if(bullets.length>1) {
                     World.remove(world,bullets[0].body);
                     bullets.shift();
                 }
-                else if(bullets.length<1) {
+                else if(bullets.length<2) {
                     the=new Bullet(gun.position.x,gun.position.y);
                     bullets.push(the);
                 }
+                the.shoot(gun$.angle);
                 isLoaded=false;
+                touches=[];
+            }
+        }
+        if(touches[0].x<up.position.x+50&&touches[0].x>up.position.x-50) {
+            if(touches[0].y<up.position.y+50&&touches[0].y>up.position.y-50) {
+                cangle++;
+                touches=[];
+            }
+        }
+        if(touches[0].x<down.position.x+50&&touches[0].x>down.position.x-50) {
+            if(touches[0].y<down.position.y+50&&touches[0].y>down.position.y-50) {
+                cangle--;
                 touches=[];
             }
         }
