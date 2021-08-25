@@ -343,13 +343,17 @@ function draw() {
         }
         if(touches[0].x<up.position.x+50&&touches[0].x>up.position.x-50) {
             if(touches[0].y<up.position.y+50&&touches[0].y>up.position.y-50) {
-                cangle++;
+                if(cangle<angles.length){
+                    cangle++;
+                }
                 touches=[];
             }
         }
         if(touches[0].x<down.position.x+50&&touches[0].x>down.position.x-50) {
             if(touches[0].y<down.position.y+50&&touches[0].y>down.position.y-50) {
-                cangle--;
+                if(cangle>=0){
+                    cangle--;
+                }
                 touches=[];
             }
         }
