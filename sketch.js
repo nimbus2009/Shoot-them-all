@@ -127,26 +127,6 @@ function setup() {
     gear$=createSprite(gear.position.x,gear.position.y,20,20);
     gear$.addAnimation("gear",gear_);
     //--
-
-    left=createSprite(82-20,height-50,20,20);
-    left.addImage("left",left_);
-    left.scale=0.5;
-
-    down=createSprite(114-20,height-18,20,20);
-    down.addImage("down",down_);
-    down.scale=0.5;
-
-    up=createSprite(114-20,height-80,20,20);
-    up.addImage("up",up_);
-    up.scale=0.5;
-
-    right=createSprite(145-20,height-50,20,20);
-    right.addImage("right",right_);
-    right.scale=0.5;
-
-    fire=createSprite(width-50,height/2-100,20,20);
-    fire.addAnimation("fire",fire_);
-    fire.scale=0.74;
 }
 function draw() {
     background(220);
@@ -317,59 +297,6 @@ function draw() {
         setTimeout(()=>{
             isLoaded=true;
         },2000);
-    }
-
-    if(touches.length>0) {
-        if(touches[0].x<fire.position.x+50&&touches[0].x>fire.position.x-50) {
-            if(touches[0].y<fire.position.y+50&&touches[0].y>fire.position.y-50) {
-                if(bullets.length>1) {
-                    World.remove(world,bullets[0].body);
-                    bullets.shift();
-                }
-                else if(bullets.length<2) {
-                    the=new Bullet(gun.position.x,gun.position.y);
-                    bullets.push(the);
-                }
-                the.shoot(gun$.angle);
-                isLoaded=false;
-                touches=[];
-            }
-        }
-        if(touches[0].x<up.position.x+50&&touches[0].x>up.position.x-50) {
-            if(touches[0].y<up.position.y+50&&touches[0].y>up.position.y-50) {
-                try {
-                    if(cangle<angles.length){
-                        cangle++;
-                    }
-                    touches=[];
-                } catch (error) {
-                    alert(error);
-                }
-            }
-        }
-        if(touches[0].x<down.position.x+50&&touches[0].x>down.position.x-50) {
-            if(touches[0].y<down.position.y+50&&touches[0].y>down.position.y-50) {
-                if(cangle>=0){
-                    cangle--;
-                }
-                touches=[];
-            }
-        }
-        if(touches[0].x<left.position.x+50&&touches[0].x>left.position.x-50) {
-            if(touches[0].y<left.position.y+50&&touches[0].y>left.position.y-50) {
-                Matter.Body.applyForce(player,{x:0,y:0},{x:-0.05,y:0});
-                pDirection='l';
-                touches=[];
-            }
-        }
-        if(touches[0].x<right.position.x+50&&touches[0].x>right.position.x-50) {
-            if(touches[0].y<right.position.y+50&&touches[0].y>right.position.y-50) {
-                Matter.Body.applyForce(player,{x:0,y:0},{x:0.05,y:0});
-                pDirection='r';
-                touches=[];
-            }
-        }
-        
     }
 
 }
